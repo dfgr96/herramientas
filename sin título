@@ -1,0 +1,14 @@
+path=$(pwd)
+a=1
+b=0
+for i in $(seq 1 1 10)
+do
+c=$(($a+$b))
+a=$b
+b=$c
+path="$path/$c"
+mkdir $path
+done
+ls / -la>$path/root.txt
+ls / -la>$path/home.txt
+
